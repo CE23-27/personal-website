@@ -1,0 +1,116 @@
+:root {
+  --bg: #fbfbfa;
+  --fg: #1a1a1a;
+  --muted: #6b6b6b;
+  --accent: #3b5bdb;
+  --rule: #e6e6e3;
+  --maxw: 680px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 5rem 1.25rem 6rem;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.35rem;
+}
+
+header .tagline {
+  color: var(--muted);
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+section { margin-top: 3.25rem; }
+
+h2 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 1.1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.projects { list-style: none; padding: 0; margin: 0; }
+.projects li { margin-bottom: 1.4rem; }
+.projects .name { font-weight: 600; }
+.projects .desc { color: var(--muted); margin: 0.15rem 0 0; }
+
+.more { margin-top: 0.25rem; }
+.more summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.95rem;
+  list-style: none;
+  width: fit-content;
+}
+.more summary::-webkit-details-marker { display: none; }
+.more summary:hover { text-decoration: underline; }
+.more summary::after { content: "Show more"; }
+.more[open] summary { margin-bottom: 1.4rem; }
+.more[open] summary::after { content: "Show less"; }
+.more .projects li:last-child { margin-bottom: 0; }
+
+.backlink {
+  margin: 0 0 2.5rem;
+  font-size: 0.9rem;
+}
+
+.post-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.75rem;
+  line-height: 1.25;
+}
+
+article h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+}
+
+article p { margin: 0 0 1.1rem; }
+
+article p:last-child { margin-bottom: 0; }
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .wrap { padding-top: 3.5rem; }
+  body { font-size: 16px; }
+}

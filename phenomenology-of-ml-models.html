@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Phenomenology of ML Models — Chidiebube Enwereji</title>
+  <meta name="description" content="On effective theories, interpretability, and what success means for ML models." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <p class="backlink"><a href="index.html">&larr; Back</a></p>
+
+    <article>
+      <h1 class="post-title">The Phenomenology of ML Models</h1>
+
+      <p>About a century after the death of Christ, Ptolemy developed a model of the universe, in which he placed the earth at the center of the universe. Somewhat incredibly, this model formed the basis of scientific consensus for 1500 years. Of course, his model was superseded by Copernicus, and his by Kepler, followed shortly by Newton. Each successive theory displaced the other by the same mechanism, improving on the predictions of the past. Every new model added precision to the astronomical predictions, widening the scope of astronomical hypotheses. So as silly as a model placing earth at the center of the universe might sound, or one where all planets move in circular orbits, these both achieved frontier levels of accuracy for real observable effects. This is essentially the whole game in theoretical physics: incremental improvements on attempts to characterize real observable effects &ndash; the development of Effective theories.</p>
+
+      <p>Effective theories don&rsquo;t exist in isolation, there is a surrounding status quo of science and technology that fails to invalidate them. The body of all observable effects expands as more penetrative technologies are developed. As new effects are observed or postulated to be observable, existing theories must be able to account for them or they are inevitably called into question. For example, Parity conservation was taken almost as a given from the advent of Quantum Mechanics, then Yang and Lee postulated its violation for weak interactions, and Madame Wu confirmed it experimentally, only then was the chiral nature of weak interactions formally built into the Standard Model. From this snippet, it is clear that the concept of an effective theory is not confined to theoretical physics. Effective theories can usually be found in domains where the observed phenomena stems from a partially inaccessible source, i.e Medical Sciences, Mathematics etc.</p>
+
+      <p>ML models fit squarely into the paradigm of an inaccessible fountainhead of observable effects. The mathematics of the training sequences (including the math retrofitted to explain them) and data pipelines say little about what models actually do. From passages of Shakespeare to verses of the Bible frontier models today can not only retrieve these texts across a medley of versions, but re-write them in any language or even tone. Linear Algebra and Numerical analysis alone might not be sufficient to explain why a model can make sense of prompts like &lsquo;write an angrier rendition of Hamlet&rsquo;, then again it might. This is indeed the central question of interpretability &ndash; how do we characterize the mechanisms by which LLMs are able to derive and communicate meaning from inputs?</p>
+
+      <p>The interpretability question is unique in the sense that there is no real straight line that can be drawn from the mechanisms of multi-headed attention to &ldquo;a good weekly meal plan for trail runners&rdquo; &ndash; at least not without some explicit choices made first. I think physics is the most apt analog, as the phenomena of the universe is totally divorced from mathematics on its own but axioms of fields of physics choose certain conventions and definitions that give them mathematical character, from which all else follows. For example, Quantum states were cast as vectors in a Hilbert space decades before anyone could say why that structure was necessary &mdash; the formalism was adopted because it made things clear and calculable, and the theorems showing it was forced came a generation later.</p>
+
+      <p>Learning lessons from the success theoretical physicists have had, interpretability researchers should make deliberate choices as well, understand that they have made these choices, and their implications. This is not the status quo.</p>
+
+      <p>Implicit in most interpretability research is the success of models as evidence of the existence of some fundamental mechanism responsible, but the central interpretability question is what is success itself.</p>
+
+      <p>The fact that a model can spin up &ldquo;the perfect restaurants to celebrate a 2 year anniversary near Quechee, VT&rdquo; is certainly commercially viable, but the means and methods it employs in doing so is where the success story may or may not lie. It would be naive to say that models may have just been getting super lucky over the last few years, but whether or not there is luck involved and to what degree is the question we must answer if systems are to be deployed confidently and safely across critical systems in Healthcare, Transportation, etc.</p>
+
+      <p>To make this concrete, consider a small, complete instance from my own recent work on state space models &mdash; chosen not because the architecture matters, but because it is simple enough that every link in the chain can be made explicit.</p>
+
+      <p>The input data carries a characteristic correlation structure: task-relevant information concentrated at particular timescales rather than spread uniformly. The model is a fixed budget of N spectral modes, and an instrument &mdash; the conditioning of the mode structure, tracked across training &mdash; reveals what optimization does with that budget: regardless of how the modes are initially arranged, training drives them to the same ill-conditioned configuration, within epochs. The arrangement (of modes) chosen at initialization, including principled ones with strong theoretical guarantees, is completely altered by the optimizer; the data's structure, expressed through training, dictates the destination. The mechanism this implies &mdash; and here the theory makes its first commitment beyond what has been measured &mdash; is a reallocation: modes migrating toward the timescales the task actually uses, purchasing resolution where the information lives at the price of conditioning. And from that commitment follows a falsifiable prediction: the trained spectrum should determine a capability boundary &mdash; timescales at which no mode survives are timescales the model cannot represent &mdash; locating the model's failures before they are observed, and explaining them in terms of data structure, training dynamics, and architecture jointly.</p>
+
+      <p>I am in the process of testing that prediction, and that is precisely the point. The theory accounts for what has been measured, states what it expects beyond the measurements, and thereby fixes the boundary of its own applicability &mdash; which is exactly the shape of an effective theory. Whether this particular one survives its test matters less than the form: this is what an answer to the interpretability question would look like, scaled up and constructed for architectures that, unlike this one, do not hand us their coordinates.</p>
+    </article>
+
+    <footer>
+      <a href="index.html">&larr; Back to home</a>
+    </footer>
+  </div>
+</body>
+</html>
